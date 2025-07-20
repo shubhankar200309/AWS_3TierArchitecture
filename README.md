@@ -1,71 +1,85 @@
-AWS 3‑Tier Architecture Web Application 
+🌐 AWS 3‑Tier Architecture Web Application
+This repository showcases the implementation of a highly available and scalable 3‑Tier Web Application architecture on Amazon Web Services (AWS).
 
-This repository contains an implementation of a 3‑tier web application on Amazon Web Services (AWS)
+📊 Architecture Diagram:
 
-Architecture Flowchart
-
-<img width="1920" height="1080" alt="3TierArch" src="https://github.com/user-attachments/assets/de7d3986-fc84-49c3-b047-c96bfcfd810e" />
-
+<img width="1920" height="1080" alt="Flowchart" src="https://github.com/user-attachments/assets/86cb6dfd-2cbd-44f4-90f4-1559628fbe01" />
 
 
-Key Features
+🚀 Key Features:
+Auto Scaling Groups for both Web and App tiers
+Internal and External Load Balancers for efficient traffic distribution
+Amazon S3 for code deployment and static content hosting
+Security Groups configured following the principle of least privilege
 
-Auto Scaling Groups for Web and App tiers
+🛠 Tech Stack:
+Layer	Technology
+Frontend	React (compiled to static HTML/CSS/JS), served via NGINX
+Backend	Node.js
+Database	Amazon RDS (MySQL)
+Infrastructure	AWS EC2, S3, RDS, ELB, Auto Scaling Groups, Security Groups
 
-Internal and External Load Balancer for Traffic Distribution
+🧩 Component-wise Architecture Breakdown
 
-AWS S3 for code deployment and static assets hosting
+1️⃣ VPC (Virtual Private Cloud):
 
-Security Groups configured for least privilege
-
-
-
-Tech Stack
-
-Frontend: React (built into static HTML/CSS/JS) served via NGINX
-
-Backend: Node.js 
-
-Database: Amazon RDS MySQL
-
-Infrastructure: AWS EC2, S3, RDS, ELB, Auto Scaling Groups, Security Group
+<img width="1920" height="1080" alt="vpc" src="https://github.com/user-attachments/assets/59d8ed74-332d-4cfd-96da-e48ce3bc8ee1" />
 
 
-Architecture Overview
+2️⃣ EC2 Instances:
+Provisioned to host frontend (NGINX) and backend (Node.js) servers.
 
-1)VPC:
-<img width="1920" height="1080" alt="vpc" src="https://github.com/user-attachments/assets/2a47eba2-0f73-4490-8f8a-10dd84ce6340" />
-
-
-2)EC2 Instance:
-  <img width="1920" height="1080" alt="EC2" src="https://github.com/user-attachments/assets/02b40e73-2f14-4848-97c7-c8d3687f65d0" />
-
-3)Security Group:
-<img width="1920" height="1080" alt="Security group" src="https://github.com/user-attachments/assets/c41b354d-0014-4c42-8c69-c7eb58133f02" />
-
-4)Target Group and Load Balancer:
-<img width="1920" height="1080" alt="load balancer" src="https://github.com/user-attachments/assets/47cb602b-2fa2-49ed-8a3f-ec6e19fa7310" />
-<img width="1920" height="1080" alt="target grp" src="https://github.com/user-attachments/assets/b80294e5-a327-4b89-acaa-a27fc629b79c" />
-
-5)S3:
-<img width="1920" height="1080" alt="s3" src="https://github.com/user-attachments/assets/4f0e6e38-9e8b-487e-8426-173e9e159656" />
-
-6)Database:
-<img width="1920" height="1080" alt="DB" src="https://github.com/user-attachments/assets/159dfaa7-f433-4ea4-b2c5-216528b198ef" />
+<img width="1920" height="1080" alt="EC2" src="https://github.com/user-attachments/assets/c8ec7609-7350-42ea-a80c-2a2a1365f9fc" />
 
 
-7)ASG:
-<img width="1920" height="1080" alt="asg" src="https://github.com/user-attachments/assets/cf941dbe-1077-4cc9-9616-104174accf5a" />
+3️⃣ Security Groups:
+Custom security group rules configured for web, app, and DB layers.
 
-7)Internet Gateway and NAT Gateway:
-<img width="1920" height="1080" alt="internet getway" src="https://github.com/user-attachments/assets/4c43ccd0-1819-4c09-994b-d7590ec8192c" />
-<img width="1920" height="1080" alt="nat gateway" src="https://github.com/user-attachments/assets/2d990636-bad2-4253-800a-d9ea3669066e" />
-
-8)CloudWatch for Load Balancer AND Database:
-<img width="1920" height="1080" alt="lb CW" src="https://github.com/user-attachments/assets/680785be-ffad-48ae-bda4-0136720609e9" />
-<img width="1920" height="1080" alt="cloud watch" src="https://github.com/user-attachments/assets/b4b160ce-ffea-414c-8fa6-96f8b1402405" />
+<img width="1920" height="1080" alt="Security group" src="https://github.com/user-attachments/assets/ddb2dcdc-02e5-419b-8e73-3db414789514" />
 
 
+4️⃣ Load Balancers & Target Groups:
+External Load Balancer for handling client traffic
+Internal Load Balancer for routing traffic to the app tier
+Target Groups for managing registered EC2 instances
+
+<img width="1920" height="1080" alt="load balancer" src="https://github.com/user-attachments/assets/21eb478b-fa76-4c69-8621-fbd992c872a5" />
+
+<img width="1920" height="1080" alt="target grp" src="https://github.com/user-attachments/assets/3a193317-ce64-44ce-9920-bf392802064f" />
+
+
+5️⃣ Amazon S3:
+Code deployment and versioning
+
+<img width="1920" height="1080" alt="s3" src="https://github.com/user-attachments/assets/1b45e3e9-bb86-4940-aa94-ac5689afbc97" />
+
+
+6️⃣ Amazon RDS (MySQL):
+Managed relational database used for application data storage.
+
+<img width="1920" height="1080" alt="DB" src="https://github.com/user-attachments/assets/8dc4a627-f6a3-457d-9c77-dd52258802fc" />
+
+
+7️⃣ Auto Scaling Groups (ASG):
+Automatically scale EC2 instances based on demand to ensure high availability.
+
+<img width="1920" height="1080" alt="asg" src="https://github.com/user-attachments/assets/6dd4da76-e942-49dc-966a-35580001e408" />
+
+
+8️⃣ Internet Gateway & NAT Gateway:
+Internet Gateway: Enables internet access for public subnets
+NAT Gateway: Provides internet access to private instances without exposing them publicly
+
+<img width="1920" height="1080" alt="internet getway" src="https://github.com/user-attachments/assets/91109c1c-550d-4e49-bb86-41ccc974a7af" />
+<img width="1920" height="1080" alt="nat gateway" src="https://github.com/user-attachments/assets/589d7a55-2a7f-485c-ab23-6624aa27aef3" />
+
+
+
+9️⃣ Amazon CloudWatch Monitoring:
+Real-time monitoring of Load Balancer and Database performance
+
+<img width="1920" height="1080" alt="lb CW" src="https://github.com/user-attachments/assets/68ac3d56-ea4a-475e-8bac-5861efc1931a" />
+<img width="1920" height="1080" alt="cloud watch" src="https://github.com/user-attachments/assets/b98686b0-ecae-4c32-8f22-1aacc8a25455" />
 
 
 
