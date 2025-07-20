@@ -3,7 +3,8 @@ This repository showcases the implementation of a highly available and scalable 
 
 📊 Architecture Diagram:
 
-<img width="1920" height="1080" alt="Flowchart" src="https://github.com/user-attachments/assets/86cb6dfd-2cbd-44f4-90f4-1559628fbe01" />
+![Untitled video - Made with Clipchamp](https://github.com/user-attachments/assets/3d404197-99f3-4c42-89a8-3033847a5c90)
+
 
 
 🚀 Key Features:
